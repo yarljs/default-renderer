@@ -6,17 +6,21 @@ function renderAtom(name, data, styleMap) {
   return test(name,data)(name, data, styleMap)
 }
 
+
+function renderMember(name, data, styleMap, index) {
+  return (
+    <div key={index} className={`${name} ${styleMap.member} ${name}`}>
+      <span className={`${name} ${styleMap.label} ${name}`}>{name}</span>
+      <div className={`${name} ${styleMap.value} ${name}`}>
+        {defaultRenderer(name, data, styleMap)}
+      </div>
+    </div>
+  )
+}
 function renderObject(name, data, styleMap) {
 
   const object = Object.keys(data).map((e, i) => {
-    return (
-      <div key={i} className={`${name} ${styleMap.member} ${e}`}>
-        <span className={`${name} ${styleMap.label} ${e}`}>{e}</span>
-        <div className={`${name} ${styleMap.value} ${e}`}>
-          {defaultRenderer(e, data[e], styleMap)}
-        </div>
-      </div>
-    )
+    return renderMember(e, data[e], styleMap, i);
   });
   return (
     <div className={`${name} ${styleMap.object}`}>
@@ -28,15 +32,15 @@ function renderObject(name, data, styleMap) {
 function renderArray(name, data, styleMap) {
   const items = data.map((e, i) => {
     return (
-      <div className={`${name} ${styleMap.item}`} key={i}>
+      <li className={`${name} ${styleMap.item}`} key={i}>
         {defaultRenderer(name, e, styleMap)}
-      </div>
+      </li>
     )
   })
   return (
-    <div className={`${name} ${styleMap.list}`}>
+    <ol className={`${name} ${styleMap.list}`}>
       {items}
-    </div>
+    </ol>
   );
 
 }
