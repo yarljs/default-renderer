@@ -1,0 +1,33 @@
+{
+  "name": "@yarljs/default-renderer",
+  "version": "1.0.0",
+  "description": "Higher Order React Components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yarljs/default-renderer.git"
+  },
+  "author": "Clark Rinker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yarljs/default-renderer/issues"
+  },
+  "homepage": "https://github.com/yarljs/default-renderer#readme",
+  "dependencies": {
+    "react": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^2.30.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
