@@ -1,7 +1,7 @@
 {
   "name": "@yarljs/default-renderer",
   "version": "1.0.0",
-  "description": "Higher Order React Components",
+  "description": "Sensible Default React component for JSON content",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
